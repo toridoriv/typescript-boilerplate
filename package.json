@@ -1,0 +1,78 @@
+{
+  "name": "@toridoriv/typescript-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for libraries written in TypeScript.",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "main": "./lib/main.cjs",
+  "module": "./lib/main.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/main.d.ts",
+        "default": "./lib/main.js"
+      },
+      "require": {
+        "types": "./lib/main.d.cts",
+        "default": "./lib/main.cjs"
+      }
+    }
+  },
+  "types": "./lib/main.d.ts",
+  "author": {
+    "name": "Victoria Rodriguez",
+    "email": "vrodriguezfe@icloud.com",
+    "url": "https://github.com/toridoriv"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "LICENSE",
+    "README.md"
+  ],
+  "homepage": "https://github.com/toridoriv/typescript-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toridoriv/typescript-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/toridoriv/typescript-boilerplate/issues",
+    "email": "vrodriguezfe@icloud.com"
+  },
+  "imports": {},
+  "scripts": {
+    "chmod": "find sbin -type f -not -name '*utils*' -not -name '*helpers*' -exec chmod +x {} \\;",
+    "commit": "gitmoji -c",
+    "prebuild": "rm -rf lib",
+    "build": "tsup",
+    "test": "vitest",
+    "test:coverage": "npm run test -- --coverage",
+    "deps:update": "scripty"
+  },
+  "devDependencies": {
+    "@cliffy/command": "npm:@jsr/cliffy__command@^1.0.0-rc.7",
+    "@cliffy/flags": "npm:@jsr/cliffy__flags@^1.0.0-rc.7",
+    "@sinclair/typebox": "^0.34.35",
+    "@toridoriv/eslint-config": "github:toridoriv/eslint-config",
+    "@types/node": "^24.0.3",
+    "@types/semver": "^7.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.34.0",
+    "@vitest/coverage-v8": "^3.2.3",
+    "eslint": "^9.29.0",
+    "gitmoji-cli": "^9.7.0",
+    "prettier": "^3.5.3",
+    "scripty": "github:toridoriv/scripty",
+    "semver": "^7.7.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0-dev.20250616",
+    "vitest": "^3.2.3"
+  },
+  "overrides": {
+    "typescript": "$typescript"
+  },
+  "config": {
+    "scripty": {
+      "path": "sbin"
+    }
+  }
+}
