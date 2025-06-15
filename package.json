@@ -74,5 +74,13 @@
     "scripty": {
       "path": "sbin"
     }
+  },
+  "gitmoji": {
+    "autoAdd": false,
+    "emojiFormat": "code",
+    "scopePrompt": ["core", "dx", "meta"],
+    "messagePrompt": true,
+    "capitalizeTitle": true,
+    "gitmojisUrl": "https://gitmoji.dev/api/gitmojis"
   }
 }
