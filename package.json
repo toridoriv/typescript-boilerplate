@@ -41,7 +41,7 @@
   },
   "imports": {},
   "scripts": {
-    "chmod": "find sbin -type f -not -name '*utils*' -not -name '*helpers*' -exec chmod +x {} \\;",
+    "chmod": "find sbin -type f -not -name '*utils*' -not -name '*helpers*' -not -name '*.md' -exec chmod +x {} \\;",
     "commit": "gitmoji -c",
     "prebuild": "rm -rf lib",
     "build": "tsup",
